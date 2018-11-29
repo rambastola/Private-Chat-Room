@@ -1,6 +1,18 @@
 from flask import session, redirect, url_for, render_template, request
 from . import main
 from .forms import LoginForm
+import requests
+
+# @main.route('/', methods=['POST'])
+# def authenticate():
+#     "make sure users' log in"
+#     if request.method == 'POST':
+#         username = request.form['username']
+#         password = request.form['password']
+#     if username == "ram" and password == "bastola":
+#         return render_template('index.html')
+#     return render_template('login.html', None )
+
 
 
 @main.route('/', methods=['GET', 'POST'])
@@ -15,7 +27,6 @@ def index():
         form.name.data = session.get('name', '')
         form.room.data = session.get('room', '')
     return render_template('index.html', form=form)
-
 
 @main.route('/chat')
 def chat():
