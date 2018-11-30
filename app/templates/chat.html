@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <html>
     <head>
         <title>Welcome to group: {{ room }}</title>
@@ -32,17 +34,35 @@
                     socket.disconnect();
 
                     // go back to the login page
-                    window.location.href = "{{ url_for('main.index') }}";
+                    window.location.href = "{{ url_for('main.authenticate') }}";
                 });
             }
         </script>
+        <style>
+        body{
+          background-image: url("https://cdn.hipwallpaper.com/i/5/45/4di6mZ.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+        button[type=submit]:hover {
+            background-color: #45a049;
+        }
+        #chat{
+          background-color: lightgray;
+        }
+        #text{
+          background-color: gray;
+        }
+        </style>
     </head>
     <body>
+      <div class="container" style="text-align: center;">
         <h1>You are connected to group: {{ room }}</h1>
         <textarea id="chat" cols="70" rows="20"></textarea><br><br>
-        <textarea id="text" cols="70" rows="10"></textarea><br><br>
+        <textarea id="text" placeholder="Type your message here...." cols="70" rows="10"></textarea><br><br>
 
-        <!-- <input id="text" size="170" placeholder="Enter your message here"><br><br> -->
-        <a href="#" onclick="leave_room();">Leave this room</a>
+        <button type="button" class ="btn btn-danger" onclick="leave_room();">Leave this room</button>
+      </div>
     </body>
 </html>

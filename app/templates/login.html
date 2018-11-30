@@ -1,8 +1,3 @@
-
-
-
-
-
 <html>
 
     <head>
@@ -36,12 +31,17 @@ input[type=submit]:hover {
 }
 </style>
     <body>
-<form method="POST">
-		{{ form.hidden_tag() }}
-		{{ form.username.label }}: {{ form.username() }} {% for error in form.username.errors %}{{ error }}{% endfor %}<br>
-		{{ form.password.label }}: {{ form.password() }} {% for error in form.password.errors %}{{ error }}{% endfor %}<br>
-		{{ form.submit() }}
-</form>
-</body>
-</style>
+      <div class="container" style="text-align: center;">
+				<form method="POST">
+						{{ form.hidden_tag() }}
+						<div style="padding-bottom:10px;">
+						{{ form.username.label }}: {{ form.username() }} {% for error in form.username.errors %}{{ error }}{% endfor %}<br>
+					</div>
+					<div style="padding-bottom:10px;">
+						{{ form.password.label }}: {{ form.password() }} {% for error in form.password.errors %}{{ error }}{% endfor %}<br>
+					</div>
+						{{ form.submit() }}
+				</form>
+      </div>
+    </body>
 </html>
