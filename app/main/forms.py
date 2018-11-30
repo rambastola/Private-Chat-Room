@@ -8,3 +8,10 @@ class LoginForm(Form):
     name = StringField('Name', validators=[Required()])
     room = StringField('Room', validators=[Required()])
     submit = SubmitField('Enter Chatroom')
+
+
+class MainLogin(Form):
+    """Accepts a nickname and a room."""
+    username = StringField('Username', validators=[Required()])
+    password = StringField('Password', validators=[Required()])
+    submit = SubmitField('Enter Group Choosing')
