@@ -1,0 +1,49 @@
+<html>
+
+    <head>
+    <h1 align="center">GOSSIP</h1>
+    <h6 align="center">Please try again!</h6>
+
+    </head>
+<style>
+
+input[type=text], select {
+    width: 20%;
+    padding: 12px 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 25%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align: center;
+}
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+</style>
+    <body>
+      <div class="container" style="text-align: center;">
+				<form method="POST">
+						{{ form.hidden_tag() }}
+						<div style="padding-bottom:10px;">
+						{{ form.username.label }}: {{ form.username() }} {% for error in form.username.errors %}{{ error }}{% endfor %}<br>
+					</div>
+					<div style="padding-bottom:10px;">
+						{{ form.password.label }}: {{ form.password() }} {% for error in form.password.errors %}{{ error }}{% endfor %}<br>
+					</div>
+						{{ form.submit() }}
+				</form>
+      </div>
+    </body>
+</html>
