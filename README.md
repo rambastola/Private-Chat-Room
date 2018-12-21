@@ -3,5 +3,5 @@
 
 # Private (Group) Chatroom
 
-execute 'python chat.py' command to run the program.
+run chat.py file to explore the program.
 
